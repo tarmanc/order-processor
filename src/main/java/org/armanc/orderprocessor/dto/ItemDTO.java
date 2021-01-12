@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
 
@@ -13,7 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Setter
-public class ItemDTO extends ItemBaseDTO {
+public class ItemDTO extends ItemBaseDTO implements Serializable {
 
     private String description;
     private long quantity;

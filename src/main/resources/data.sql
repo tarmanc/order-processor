@@ -1,0 +1,3 @@
+INSERT INTO itemdb.item (id, description, item_name, item_price, quantity) VALUES ('5f929f9a-3ee2-46bd-96c7-10a31e6e30e4', 'Test Descripton', 'Test Item 3', 12.99, 20);
+INSERT INTO itemdb.item (id, description, item_name, item_price, quantity) VALUES ('7e56f782-4d5b-4f10-8f7c-e4aa440317a0', 'Test Descripton', 'Test Item 2', 12.99, 20);
+INSERT INTO itemdb.item (id, description, item_name, item_price, quantity) VALUES ('8e830f10-a180-4940-8ff4-39cc3423e4e5', 'Test Descripton', 'Test Item 1', 12.99, 20);

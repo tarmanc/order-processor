@@ -1,7 +1,5 @@
 package org.armanc.orderprocessor.service;
 
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.armanc.orderprocessor.dto.ItemBaseDTO;
 import org.armanc.orderprocessor.dto.ItemDTO;
 import org.armanc.orderprocessor.entities.Item;
@@ -33,6 +31,7 @@ public class ItemService {
         this.detailedMapper = detailedMapper;
     }
 
+    @Cacheable(value = "allList")
     public List<ItemBaseDTO> getAllItems() {
         List<Item> list = itemDAO.findAll();
         return list.stream().map(baseMapper::itemToItemBaseDTO).collect(Collectors.toList());
@@ -45,6 +44,7 @@ public class ItemService {
         return detailedMapper.itemToItemDTO(returnedValue.orElse(null));
     }
 
+    @Cacheable(value = "searchByName")
     public List<ItemBaseDTO> searchItemsByName(String name){
         List<Item> list = itemDAO.findByItemNameContaining(name);
         return list.stream().map(baseMapper::itemToItemBaseDTO).collect(Collectors.toList());

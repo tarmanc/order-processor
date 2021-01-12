@@ -16,6 +16,8 @@ public class JmsConfig {
     public static final String SEARCH_QUEUE = "search_queue";
 
 
+
+
     @Bean()
     public MessageConverter messageConverter() {
         MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
