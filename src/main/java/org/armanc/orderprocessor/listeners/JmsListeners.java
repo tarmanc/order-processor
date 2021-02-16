@@ -6,7 +6,6 @@ import lombok.SneakyThrows;
 import org.armanc.orderprocessor.config.JmsConfig;
 import org.armanc.orderprocessor.dto.ItemBaseDTO;
 import org.armanc.orderprocessor.dto.ItemDTO;
-import org.armanc.orderprocessor.repository.ItemDAO;
 import org.armanc.orderprocessor.service.ItemService;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsTemplate;
@@ -23,34 +22,6 @@ public class JmsListeners {
 
     private final ItemService service;
     private final JmsTemplate jmsTemplate;
-    private final ItemDAO itemDAO;
-
-//    @EventListener(ApplicationReadyEvent.class)
-//    public void doSomethingAfterStartup() {
-////        Item item = Item.builder()
-////                .itemName("Test Item 1")
-////                .description("Test Descripton")
-////                .itemPrice(new BigDecimal("12.99"))
-////                .quantity(20L)
-////                .build();
-////        Item item2 = Item.builder()
-////                .itemName("Test Item 2")
-////                .description("Test Descripton")
-////                .itemPrice(new BigDecimal("12.99"))
-////                .quantity(20L)
-////                .build();
-////        Item item3 = Item.builder()
-////                .itemName("Test Item 3")
-////                .description("Test Descripton")
-////                .itemPrice(new BigDecimal("12.99"))
-////                .quantity(20L)
-////                .build();
-////
-////        itemDAO.saveAndFlush(item);
-////        itemDAO.saveAndFlush(item2);
-////        itemDAO.saveAndFlush(item3);
-//        System.out.println(itemDAO.findByItemNameContaining("Test Item 1").get(0).getId());
-//    }
 
     @SneakyThrows
     @JmsListener(destination = JmsConfig.ALL_QUEUE)
